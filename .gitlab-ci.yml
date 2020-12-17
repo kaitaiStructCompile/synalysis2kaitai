@@ -1,0 +1,59 @@
+image: registry.gitlab.com/kolanich/fixed_python:latest
+
+stages:
+  - dependencies
+  - build
+  - test
+  - tooling
+
+build:
+  tags:
+    - shared
+  stage: build
+  variables:
+    GIT_DEPTH: "1"
+    PYTHONUSERBASE: ${CI_PROJECT_DIR}/python_user_packages
+    SYNALYSIS_REPO: https://github.com/synalysis/Grammars.git
+
+  before_script:
+    - export PATH="$PATH:$PYTHONUSERBASE/bin" # don't move into `variables`
+    #- . ./scripts/setup.sh
+
+  cache:
+    paths:
+      - $PYTHONUSERBASE
+
+  script:
+    - python3 setup.py bdist_wheel
+    - mkdir wheels
+    - mv ./dist/*.whl ./wheels/synalisys2kaitai-0.CI-py3-none-any.whl
+    - pip3 install --user --upgrade ./wheels/synalisys2kaitai-0.CI-py3-none-any.whl
+    #- ./scripts/test.sh
+    #- coverage run -a --source=Endianness ./tests/tests.py
+    #- coverage report -m || true
+    #- coveralls || true
+    #- codecov || true
+  artifacts:
+    paths:
+      - wheels
+
+checks:
+  stage: tooling
+  tags:
+    - shared
+  image: docker:latest
+  variables:
+    DOCKER_DRIVER: overlay2
+  allow_failure: true
+  services:
+    - docker:dind
+  script:
+    - docker run --env SAST_CONFIDENCE_LEVEL=5 --volume "$PWD:/code" --volume /var/run/docker.sock:/var/run/docker.sock "registry.gitlab.com/gitlab-org/security-products/sast:latest" /app/bin/run /code
+    - docker run --env SOURCE_CODE="$PWD" --env CODECLIMATE_VERSION="latest" --volume "$PWD":/code --volume /var/run/docker.sock:/var/run/docker.sock "registry.gitlab.com/gitlab-org/security-products/codequality:latest" /code
+    #- docker run --env DEP_SCAN_DISABLE_REMOTE_CHECKS="${DEP_SCAN_DISABLE_REMOTE_CHECKS:-false}" --volume "$PWD:/code" --volume /var/run/docker.sock:/var/run/docker.sock "registry.gitlab.com/gitlab-org/security-products/dependency-scanning:latest" /code
+
+  artifacts:
+    reports:
+      codequality: gl-code-quality-report.json
+      sast: gl-sast-report.json
+      #dependency_scanning: gl-dependency-scanning-report.json 

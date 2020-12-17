@@ -1,0 +1,12 @@
+acv
+h264
+der
+efires
+iptc
+dsstore
+esp8266
+pvr
+astc
+xbc
+3gf
+PS1SaveGames

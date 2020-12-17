@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.3.1">
+	<grammar name="masks">
+		<number name="masks_u1" id="1" type="integer" length="1">
+			<mask name="one" value="0x01">
+				<fixedvalue name="false" value="0x00"/>
+				<fixedvalue name="true" value="0x01"/>
+			</mask>
+			<mask name="two" value="0x06">
+				<fixedvalue name="zero" value="0x00"/>
+				<fixedvalue name="one" value="0x02"/>
+				<fixedvalue name="two" value="0x04"/>
+				<fixedvalue name="three" value="0x06"/>
+			</mask>
+			<mask name="four" value="0x78">
+				<fixedvalue name="zero" value="0x00"/>
+				<fixedvalue name="one" value="0x08"/>
+				<fixedvalue name="two" value="0x10"/>
+				<fixedvalue name="three" value="0x18"/>
+				<fixedvalue name="four" value="0x20"/>
+				<fixedvalue name="five" value="0x28"/>
+				<fixedvalue name="six" value="0x30"/>
+				<fixedvalue name="seven" value="0x38"/>
+				<fixedvalue name="eight" value="0x40"/>
+				<fixedvalue name="nine" value="0x48"/>
+				<fixedvalue name="ten" value="0x50"/>
+				<fixedvalue name="eleven" value="0x58"/>
+				<fixedvalue name="tvelve" value="0x60"/>
+				<fixedvalue name="thirteen" value="0x68"/>
+				<fixedvalue name="fourteen" value="0x70"/>
+				<fixedvalue name="fifteen" value="0x78"/>
+			</mask>
+			<!-- and 1 byte reserved-->
+		</number>
+		<number name="masks_u2" id="2" type="integer" length="2">
+			<mask name="one" value="0x01">
+				<fixedvalue name="false" value="0x00"/>
+				<fixedvalue name="true" value="0x01"/>
+			</mask>
+			<mask name="two" value="0x06">
+				<fixedvalue name="zero" value="0x00"/>
+				<fixedvalue name="one" value="0x02"/>
+				<fixedvalue name="two" value="0x04"/>
+				<fixedvalue name="three" value="0x06"/>
+			</mask>
+			<mask name="four" value="0x78">
+				<fixedvalue name="zero" value="0x00"/>
+				<fixedvalue name="one" value="0x08"/>
+				<fixedvalue name="two" value="0x10"/>
+				<fixedvalue name="three" value="0x18"/>
+				<fixedvalue name="four" value="0x20"/>
+				<fixedvalue name="five" value="0x28"/>
+				<fixedvalue name="six" value="0x30"/>
+				<fixedvalue name="seven" value="0x38"/>
+				<fixedvalue name="eight" value="0x40"/>
+				<fixedvalue name="nine" value="0x48"/>
+				<fixedvalue name="ten" value="0x50"/>
+				<fixedvalue name="eleven" value="0x58"/>
+				<fixedvalue name="tvelve" value="0x60"/>
+				<fixedvalue name="thirteen" value="0x68"/>
+				<fixedvalue name="fourteen" value="0x70"/>
+				<fixedvalue name="fifteen" value="0x78"/>
+			</mask>
+			<mask name="five" value="0xf80">
+				<fixedvalue name="thirtyone" value="0xf80"/>
+			</mask>
+			<!-- and 1 byte reserved-->
+		</number>
+	</grammar>
+</ufwb>

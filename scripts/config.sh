@@ -1,0 +1,4 @@
+export SYNALYSIS_REPO=${SYNALYSIS_REPO:-"../synalisis"}
+export GRAMMARS_DIRS=${GRAMMARS_DIRS:-"./grammars"}
+export SYNALYSIS_REPO_DIR=$GRAMMARS_DIRS/original
+export OK_DIR=$GRAMMARS_DIRS/OK

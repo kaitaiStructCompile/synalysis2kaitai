@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.2", "setuptools_scm",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Synalysis2Kaitai"
+authors = [{name = "KOLANICH"}]
+description = "A convertor of grammars for SynalizeIt and Hexinator to Kaitai Struct"
+readme = "ReadMe.md"
+keywords = ["binary", "format", "reverse engineering", "reversing", "parser", "grammar"]
+license = {text = "Unlicense"}
+classifiers = [
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	"Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator",
+	"Topic :: Software Development :: Documentation",
+]
+requires-python = ">=3.4"
+dependencies = [
+	"Endianness", # @ git+https://github.com/KOLANICH/Endianness.py.git
+	"ruamel.yaml",
+	"plumbum", # @ git+https://github.com/tomerfiliba/plumbum.git
+	"beautifulsoup4",
+	"lxml",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/kaitaiStructCompile/synalysis2kaitai"
+
+[tool.setuptools]
+zip-safe = true
+packages = ["Synalysis2Kaitai"]
+include-package-data = false
+
+[tool.setuptools_scm]

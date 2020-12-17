@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.3.1">
+	<grammar name="masks">
+		<number name="masks_u1_be" type="integer" length="1" endian="big">
+			<mask name="eighty_" value="0x80">
+				<fixedvalue name="false" value="0x0"/>
+				<fixedvalue name="true" value="0x80"/>
+			</mask>
+			<mask name="seventy" value="0x70">
+				<fixedvalue name="true" value="0x70"/>
+			</mask>
+			<mask name="eight__" value="0x8">
+				<fixedvalue name="false" value="0x0"/>
+				<fixedvalue name="true" value="0x8"/>
+			</mask>
+			<mask name="seven__" value="0x7">
+				<fixedvalue name="true" value="0x7"/>
+			</mask>
+		</number>
+		<number name="masks_u1_le" type="integer" length="1" endian="little">
+			<mask name="eighty_" value="0x80">
+				<fixedvalue name="false" value="0x0"/>
+				<fixedvalue name="true" value="0x80"/>
+			</mask>
+			<mask name="seventy" value="0x70">
+				<fixedvalue name="true" value="0x70"/>
+			</mask>
+			<mask name="eight__" value="0x8">
+				<fixedvalue name="false" value="0x0"/>
+				<fixedvalue name="true" value="0x8"/>
+			</mask>
+			<mask name="seven__" value="0x7">
+				<fixedvalue name="true" value="0x7"/>
+			</mask>
+		</number>
+		<number name="masks_u2_be" type="integer" length="2" endian="big">
+			<mask name="eighty_eight" value="0xFF">
+				<fixedvalue name="false" value="0x00"/>
+				<fixedvalue name="true" value="0x88"/>
+			</mask>
+			<mask name="seven_thousand" value="0x7000">
+				<fixedvalue name="true" value="0x7000"/>
+				<fixedvalue name="false" value="0x0000"/>
+			</mask>
+		</number>
+		
+		<number name="masks_u2_le" type="integer" length="2" endian="little">
+			<mask name="eighty_eight" value="0xFF">
+				<fixedvalue name="false" value="0x00"/>
+				<fixedvalue name="true" value="0x88"/>
+			</mask>
+			<mask name="seven_thousand" value="0x7000">
+				<fixedvalue name="true" value="0x7000"/>
+				<fixedvalue name="false" value="0x0000"/>
+			</mask>
+		</number>
+		<number name="masks_u2_ff0_le" type="integer" length="2" endian="little">
+			<mask name="ff0" value="0xFF0">
+				<fixedvalue name="true" value="0xFF0"/>
+				<fixedvalue name="false" value="0x000"/>
+			</mask>
+		</number>
+	</grammar>
+</ufwb>
+

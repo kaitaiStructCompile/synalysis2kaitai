@@ -1,0 +1,7 @@
+spec_synalysis: "png"
+spec_kaitai: "image/png"
+test_files:
+  - "a.png"
+
+identities:
+  

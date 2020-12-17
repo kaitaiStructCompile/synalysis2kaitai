@@ -1,0 +1,9 @@
+spec_synalysis: "zip"
+spec_kaitai: "archive/zip"
+test_files:
+  - "a_deflate.zip"
+  #- "a_store.zip"
+  #- "a_store_password.zip"
+
+identities:
+  

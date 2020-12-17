@@ -1,0 +1,6 @@
+spec_synalysis: "mbr"
+spec_kaitai: "filesystem/mbr_partition_table"
+test_files:
+  - "mbr.dat"
+
+identities:

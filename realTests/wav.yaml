@@ -1,0 +1,7 @@
+spec_synalysis: "wav"
+spec_kaitai: "media/wav"
+test_files:
+  - "a.wav"
+
+identities:
+  

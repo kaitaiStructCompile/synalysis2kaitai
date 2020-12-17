@@ -1,0 +1,20 @@
+spec_synalysis: "gif"
+spec_kaitai: "image/gif"
+test_files:
+  - "a.gif"
+
+identities:
+  "gif_file":
+    "header->hdr":
+      "eye_catcher" : "magic"
+      "version" : "version"
+    "logical_screen_descriptor->logical_screen_descriptor":
+      "background_color_index": "bg_color_index"
+      "height": "screen_height"
+      "width": "screen_width"
+      "pixel_aspect_ratio": "pixel_aspect_ratio"
+      #"packed_fields.global_color_table_flag": "has_color_table" # conversion from a enum to bool
+      
+      #"packed_fields.size_of_global_color_table": "color_table_size" # needs an auxilary field in the KS native spec
+      #"packed_fields.color_resolution": ""
+      #"packed_fields.sort_flag": ""

@@ -1,0 +1,32 @@
+spec_synalysis: "bson"
+spec_kaitai: "serialization/bson"
+test_files:
+  - "test.bson"
+
+identities:
+  
+# these are from Kaitai native spec
+# synalysis grammars are based on a different paradigm - every subspec is tried to match
+# so transforming is hard - multipass approach is needed, it is not yet implemented
+a.fields.elements[0].name.str
+a.fields.elements[0].type_byte
+a.fields.elements[0].content.fields
+
+
+a.fields.elements[0].content.fields.elements[0].content
+a.fields.elements[0].content.fields.elements[0].name.str
+
+a.fields.elements[0].content.fields.elements[1].content.str
+a.fields.elements[0].content.fields.elements[1].type_byte
+a.fields.elements[0].content.fields.elements[1].name.str
+
+a.fields.elements[0].content.fields.elements[2].type_byte
+
+a.fields.elements[0].content.fields.elements[3].type_byte
+a.fields.elements[0].content.fields.elements[3].content
+
+a.fields.elements[0].content.fields.elements[4].type_byte
+a.fields.elements[0].content.fields.elements[4].content
+
+a.fields.elements[2].type_byte
+a.fields.elements[2].content

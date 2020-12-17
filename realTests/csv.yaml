@@ -1,0 +1,14 @@
+spec_synalysis: "csv"
+spec_kaitai: "database/csv"
+test_files:
+  - "a.csv"
+
+identities:
+  csv_file:
+    "line -> rows":
+      "0 -> 0": *cellTest
+        "record->cell":
+          0: 0
+          1: 1
+        "last_record": "cell.2"
+      "1 -> 1": &cellTest

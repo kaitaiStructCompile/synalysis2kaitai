@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.3.1">
+	<grammar name="references" start="id:1">
+		<structure name="a" id="1">
+			<number name="referee" id="2" type="integer" length="1"/>
+		</structure>
+		<structure name="referer" id="3">
+			<structref name="ref" id="4" structure="id:1"/>
+		</structure>
+	</grammar>
+</ufwb>

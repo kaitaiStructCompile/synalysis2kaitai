@@ -1,0 +1,10 @@
+ase
+bam
+dbase
+msgpack
+NamedBinaryTag
+pgrescopy
+pyc
+qt
+stl
+swf

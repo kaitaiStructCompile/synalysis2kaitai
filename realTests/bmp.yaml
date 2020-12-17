@@ -1,0 +1,19 @@
+spec_synalysis: "bitmap"
+spec_kaitai: "image/bmp"
+test_files:
+  - "a.bmp"
+
+identities:
+  bitmap_file:
+    "bitmapinfoheader.bi_size": "len_dib_header"
+    "bitmapinfoheader->dib_header":
+      bi_bit_count: bits_per_pixel
+      bi_height: image_height
+      bi_width: image_width
+      bi_planes: num_planes
+      bi_compression: compression
+      bix_pels_per_meter: x_px_per_m
+      biy_pels_per_meter: y_px_per_m
+      bi_clr_important: num_colors_important
+      bi_clr_used: num_colors_used
+      bi_size_image: len_image

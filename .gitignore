@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+*.pyo
+/Synalysis2Kaitai.egg-info
+/build
+/dist
+/.eggs
+/grammars
+/results
+/OK
+/testedFormatsInstances
